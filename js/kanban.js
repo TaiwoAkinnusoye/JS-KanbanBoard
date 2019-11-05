@@ -32,9 +32,9 @@ const create_item = () => {
   const input = document.createElement('input');
   item.appendChild(input);
 
-  const saveBtn = document.createElement('button');
-  saveBtn.innerHTML = 'Save';
-  saveBtn.addEventListener('click', () => {
+  const save_btn = document.createElement('button');
+  save_btn.innerHTML = 'Save';
+  save_btn.addEventListener('click', () => {
     error = "";
     if (input.value !== "") {
       order += 1;
@@ -43,9 +43,9 @@ const create_item = () => {
     } else {
       error.innerHTML = message;
     };
-    item.append(saveBtn);
-    return item;
   })
+  item.appendChild(save_btn);
+  return item;
 };
 
 document.querySelectorAll('.drop').forEach(element => {
