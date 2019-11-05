@@ -35,7 +35,7 @@ const create_item = () => {
   const save_btn = document.createElement('button');
   save_btn.innerHTML = 'Save';
   save_btn.addEventListener('click', () => {
-    error = "";
+    error.innerHTML = "";
     if (input.value !== "") {
       order += 1;
       item.innerHTML = input.value;
@@ -49,4 +49,9 @@ const create_item = () => {
 };
 
 document.querySelectorAll('.drop').forEach(element => {
+  element.addEventListener('drop', (event) => {
+    event.preventDefault();
+    const id = event.dataTransfer.getData('text');
+    event.target.appendChild(document.getElementById(id));
+  })
 });
