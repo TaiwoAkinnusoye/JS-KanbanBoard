@@ -17,6 +17,9 @@ add_btn.addEventListener('click', () => {
 
 const create_item = () => {
   const item = document.createElement('div');
+  item.classList.add('item');
+  item.id = 'item-' + order;
+  item.draggable; 
 };
 
 document.querySelectorAll('.drop').forEach(element => {
