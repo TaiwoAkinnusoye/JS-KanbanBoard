@@ -31,6 +31,21 @@ const create_item = () => {
 
   const input = document.createElement('input');
   item.append(input);
+
+  const saveBtn = document.createElement('button');
+  saveBtn.innerHTML = 'Save';
+  saveBtn.addEventListener('click', () => {
+    error = "";
+    if (input.value !== "") {
+      order += 1;
+      item.innerHTML = input.value;
+      adding = false;
+    } else {
+      error.innerHTML = message;
+    };
+    item.append(saveBtn);
+    return item;
+  })
 };
 
 document.querySelectorAll('.drop').forEach(element => {
