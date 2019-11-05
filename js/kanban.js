@@ -19,7 +19,7 @@ const create_item = () => {
   const item = document.createElement('div');
   item.classList.add('item');
   item.id = 'item-' + order;
-  item.draggable; 
+  item.draggable  = true; 
 };
 
 document.querySelectorAll('.drop').forEach(element => {
